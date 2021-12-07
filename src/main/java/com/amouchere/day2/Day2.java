@@ -19,6 +19,7 @@ public class Day2 extends AdventOfCode {
     public static void main(String[] args) throws IOException {
         Day2 day = new Day2(new File("src/main/resources/inputs_d2.txt"));
         day.run();
+        day.run2();
 
     }
 
@@ -26,14 +27,29 @@ public class Day2 extends AdventOfCode {
     public void run() {
         LOGGER.info(">>>>>>>> RUN1");
 
-        Submarine submarine = new Submarine();
+        Submarine submarine = new SubmarineRun1();
 
+        moveSubmarine(submarine);
+        LOGGER.info("value " + submarine.getSubmarineValue());
+    }
+
+    // part 1
+    public void run2() {
+        LOGGER.info(">>>>>>>> RUN2");
+        Submarine submarine = new SubmarineRun2();
+
+        moveSubmarine(submarine);
+        LOGGER.info("value " + submarine.getSubmarineValue());
+
+    }
+
+    private void moveSubmarine(Submarine submarine) {
         for (String line : inputs) {
             String[] inputs = line.split(" ");
             Direction direction = Direction.fromString(inputs[0]);
             int value = Integer.parseInt(inputs[1]);
 
-            LOGGER.info(line);
+            // LOGGER.info(line);
 
             switch (direction) {
                 case UP:
@@ -51,14 +67,6 @@ public class Day2 extends AdventOfCode {
 
 
         }
-        LOGGER.info("value " + submarine.getSubmarineValue());
-    }
-
-    // part 1
-    public void run2() {
-        LOGGER.info(">>>>>>>> RUN2");
-
-
     }
 
 

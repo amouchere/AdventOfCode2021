@@ -1,22 +1,11 @@
 package com.amouchere.day2;
 
-public class Submarine {
-    int horizontalPosition = 0;
-    int verticalPosition = 0;
+public interface Submarine {
+    void forward(int value);
 
-    public void forward(int value) {
-        horizontalPosition += value;
-    }
+    void down(int value);
 
-    public void down(int value) {
-        verticalPosition += value;
-    }
+    void up(int value);
 
-    public void up(int value) {
-        verticalPosition -= value;
-    }
-
-    public int getSubmarineValue() {
-        return verticalPosition * horizontalPosition;
-    }
+    int getSubmarineValue();
 }
