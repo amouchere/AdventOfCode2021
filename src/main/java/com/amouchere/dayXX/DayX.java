@@ -16,8 +16,8 @@ public class DayX extends AdventOfCode {
     }
 
     public static void main(String[] args) throws IOException {
-        DayX day = new DayX(new File("src/main/resources/inputs_XX.txt"));
-        day.run2();
+        DayX day = new DayX(new File("src/main/resources/inputs_dX.txt"));
+        day.run();
     }
 
     // part 1
